@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
 
         android:text="@string/btn1"
-        android:textSize="20dp"
-        android:textColor="#FF0000"
+        android:textColor="#DD2C00"
+        android:textSize="20sp"
 
         />
 
@@ -43,6 +43,6 @@
 
         android:text="@string/btn4"
         android:onClick="Click_Method"
-        />
+        tools:ignore="UsingOnClickInXml" />
 
 </LinearLayout>
