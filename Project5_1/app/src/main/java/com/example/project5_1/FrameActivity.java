@@ -20,8 +20,8 @@ public class FrameActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
 
-        frame = findViewById(R.id.framlayout);
-        textView1 = findViewById(R.id.textView);
+        frame = findViewById(R.id.frame1);
+        textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
 

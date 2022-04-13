@@ -7,60 +7,63 @@
     tools:context=".FrameActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:id="@+id/linear1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <Button
             android:id="@+id/btn1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="1dp"
-            android:text="1" />
-
+            android:layout_weight="1"
+            android:text="버튼1"/>
         <Button
             android:id="@+id/btn2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="2" />
-
+            android:layout_weight="1"
+            android:text="버튼2"/>
         <Button
             android:id="@+id/btn3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="3" />
-
-        <FrameLayout
-            android:id="@+id/framlayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView2"
-                android:background="@android:col"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView3"
-                android:background="@android:color/background_dark"
-                />
-        </FrameLayout>
-
-
+            android:layout_weight="1"
+            android:text="버튼3"/>
     </LinearLayout>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/frame1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="TextView1"
+            android:gravity="center"
+            android:background="#ff0000"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff00"
+            android:gravity="center"
+            android:text="TextView2"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#69F0AE"
+            android:text="TextView3"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
