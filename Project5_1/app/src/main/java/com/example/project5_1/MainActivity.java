@@ -1,10 +1,5 @@
 package com.example.project5_1;
 
-import static java.lang.Thread.interrupted;
-import static java.lang.Thread.sleep;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -79,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         //레이아웃인플레이터 액티비티로 이동
         Button btnInflate = new Button(this);
-        btnInflate.setText("프레임 레이아웃 이동");
+        btnInflate.setText("레이아웃인플레이터로 이동");
         LinearLayout.LayoutParams BtnInflateLayoutParams = new LinearLayout.LayoutParams(250, 200);
 
         linearLayout.addView(btnInflate, BtnInflateLayoutParams );
@@ -87,6 +84,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, InflateActivity.class);
+                startActivity(i);
+            }
+        });
+        
+        //프래그먼트 레이아웃 만들기
+        Button btnFrag = new Button(this);
+        btnFrag.setText("프래그먼트로 이동");
+        LinearLayout.LayoutParams BtnFragLayoutParams = new LinearLayout.LayoutParams(250, 200);
+
+        linearLayout.addView(btnFrag, BtnFragLayoutParams );
+        btnFrag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, FragActivity.class);
                 startActivity(i);
             }
         });
