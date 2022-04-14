@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project5_1">
         <activity
+            android:name=".InflateActivity"
+            android:exported="false" />
+        <activity
             android:name=".FrameActivity"
             android:exported="false" />
         <activity

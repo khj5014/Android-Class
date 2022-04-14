@@ -77,7 +77,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        setContentView(linearLayout);
+        //레이아웃인플레이터 액티비티로 이동
+        Button btnInflate = new Button(this);
+        btnInflate.setText("프레임 레이아웃 이동");
+        LinearLayout.LayoutParams BtnInflateLayoutParams = new LinearLayout.LayoutParams(250, 200);
 
+        linearLayout.addView(btnInflate, BtnInflateLayoutParams );
+        btnInflate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, InflateActivity.class);
+                startActivity(i);
+            }
+        });
+        
+        setContentView(linearLayout);
     }
 }
