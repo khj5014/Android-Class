@@ -17,7 +17,7 @@
             android:id="@+id/chronometer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:format="예약에 걸리 시간 : %s"
+            android:format="예약에 걸린 시간 : %s"
             android:gravity="center" />
 
         <Button
@@ -57,7 +57,8 @@
             <TimePicker
                 android:id="@+id/timePicker"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"/>
         </FrameLayout>
 
         <LinearLayout
