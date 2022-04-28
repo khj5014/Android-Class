@@ -25,7 +25,6 @@
         android:title="배경색변경(블루)"/>
     <item
         android:title="버튼변경">
-
         <menu>
             <item
                 android:id="@+id/subRotate"
