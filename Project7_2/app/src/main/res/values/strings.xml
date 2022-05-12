@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Project7_2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">대화상자</string>
+    <string name="Custom_Dialog_fragment">커스텀 대화상자</string>
+    <string name="More_fragment">더보기 대화상자</string>
+    <string name="Add_fragment">추가 대화상자</string>
 </resources>
