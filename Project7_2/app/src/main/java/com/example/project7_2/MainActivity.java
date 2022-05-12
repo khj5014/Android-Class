@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         transaction.replace(R.id.framLaout, addFragment).commit();
                         break;
                 }
-                return false;
+                return true;
             }
         });
     }
