@@ -1,6 +1,6 @@
 package com.example.Project9_3;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +14,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         clickIcons();
     }
-
     private void clickIcons() {
         ibZoomin = (ImageButton) findViewById(R.id.ibZoomin);
         ibZoomin.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
         ibZoomout = (ImageButton) findViewById(R.id.ibZoomout);
         ibZoomout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
         ibRotate = (ImageButton) findViewById(R.id.ibRotate);
         ibRotate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -68,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
         ibBright = (ImageButton) findViewById(R.id.ibBright);
         ibBright.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
         ibDark = (ImageButton) findViewById(R.id.ibDark);
         ibDark.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -84,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
         ibBlur = (ImageButton) findViewById(R.id.ibBlur);
         ibBlur.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -95,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
         ibEmbos = (ImageButton) findViewById(R.id.ibEmbos);
         ibEmbos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -106,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 graphicView.invalidate();
             }
         });
-
     }
 
     private static class MyGraphicView extends View {
@@ -137,8 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (embos == true) {
                 EmbossMaskFilter eMask;
-                eMask = new EmbossMaskFilter(new float[] { 3, 3, 3 }, 0.5f, 5,
-                        10);
+                eMask = new EmbossMaskFilter(new float[] { 3, 3, 3 }, 0.5f, 5,10);
                 paint.setMaskFilter(eMask);
             }
 
