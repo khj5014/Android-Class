@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("VoteCount", voteCount);
                 intent.putExtra("ImgName", imgName);
 
-//                startActivity(intent);
+                //startActivity(intent);
                 //콜백함술르 등록해서 호출
                 mStartForResult.launch(intent);
             }
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
+
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == RESULT_OK) {
@@ -93,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
                         btn00.setOnClickListener((view) -> {
                             dialog.dismiss();
                         });
-
-
 
                     }
                 }
