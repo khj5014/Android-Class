@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/dialogtv"
+        android:textSize="@android:dimen/app_icon_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가장 마니마니 선택됨" />
+
+    <ImageView
+        android:id="@+id/dialogiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pic1" />
+
+    <Button
+        android:id="@+id/btnfinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="종료" />
+
+
+</LinearLayout>

@@ -1,12 +1,20 @@
 package com.example.project10_1;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,9 +61,43 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("VoteCount", voteCount);
                 intent.putExtra("ImgName", imgName);
 
-                startActivity(intent);
+//                startActivity(intent);
+                //콜백함술르 등록해서 호출
+                mStartForResult.launch(intent);
             }
         });
 
     }
+
+    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Log.d("TAG", "RESULT_OK : " + RESULT_OK);
+
+                        Intent intent = result.getData();
+
+                        Dialog dialog = new Dialog(MainActivity.this);
+                        dialog.setContentView(R.layout.custome_dialog);
+                        TextView dialogtv = dialog.findViewById(R.id.dialogtv);
+                        ImageView dialogiv = dialog.findViewById(R.id.dialogiv);
+
+                        dialogtv.setText(intent.getStringExtra("ImageName"));
+                        dialogiv.setImageResource(intent.getIntExtra("ImageId", 0));
+
+                        dialog.show();
+
+                        Button btn00 = dialog.findViewById(R.id.btnfinish);
+                        btn00.setOnClickListener((view) -> {
+                            dialog.dismiss();
+                        });
+
+
+
+                    }
+                }
+            });
+
 }
