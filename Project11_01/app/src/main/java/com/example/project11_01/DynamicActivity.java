@@ -23,7 +23,7 @@ public class DynamicActivity extends AppCompatActivity {
 
         editName = findViewById(R.id.editText1);
         btnInsert =findViewById(R.id.btnInsert);
-        btnInsert =findViewById(R.id.btnDelete);
+        btnDelete =findViewById(R.id.btnDelete);
         
         
         //1. 데이터 저장
