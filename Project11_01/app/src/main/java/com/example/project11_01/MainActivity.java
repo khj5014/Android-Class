@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("리스트 뷰");
 
         //1.데이터생성
-        String[] array = {"리스트 동적 추가", "커스텀 리스트뷰", "이순신", "유관순", "강아지", "강아지", "강아지",
-                "강아지", "강아지", "강아지", "강아지", "강아지", "강아지", "강아지", "강아지", "강아지"};
+        String[] array = {"리스트 동적 추가", "커스텀 리스트뷰", "이순신", "유관순", "강아지"};
 
         //2. 리스트 뷰 참조
         ListView listView = findViewById(R.id.listView1);
