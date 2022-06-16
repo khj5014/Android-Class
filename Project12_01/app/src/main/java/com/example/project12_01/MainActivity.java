@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(this, "입력완료", Toast.LENGTH_SHORT).show();
         });*/
-
+        //삽입
         btnInsert.setOnClickListener(view -> {
             db = myDBHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
             edtName.requestFocus();
         });
+        //조회
         btnSelect.setOnClickListener(view -> {
             db = myDBHelper.getWritableDatabase();
             Cursor cursor;
@@ -90,9 +91,46 @@ public class MainActivity extends AppCompatActivity {
             edtNameResult.setText(strNames);
             edtNumberResult.setText(strNumbers);
 
+            //키패드 없애기
+            InputMethodManager im = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            im.hideSoftInputFromWindow(edtName.getWindowToken(), 0);
+
             cursor.close();
             db.close();
         });
+
+        //초기화
+        btnInit.setOnClickListener(view -> {
+            db = myDBHelper.getWritableDatabase();
+            myDBHelper.onUpgrade(db, 1, 2);
+        });
+        //삭제
+        btnDelete.setOnClickListener(view -> {
+            db = myDBHelper.getWritableDatabase();
+            String sql = "delete from groupTBL where gName = '" + edtName.getText().toString() + "'";
+            if (edtName.getText().toString() != "") {
+                db.execSQL(sql);
+            }
+            //키패드 없애기
+            InputMethodManager im = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            im.hideSoftInputFromWindow(edtName.getWindowToken(), 0);
+
+            db.close();
+            btnSelect.callOnClick();
+        });
+
+        btnUpdate.setOnClickListener(view -> {
+            db = myDBHelper.getWritableDatabase();
+            String sql = "update from groupTBL where gName = '" + edtName.getText().toString() + "'";
+
+            //키패드 없애기
+            InputMethodManager im = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            im.hideSoftInputFromWindow(edtName.getWindowToken(), 0);
+
+            db.close();
+            btnSelect.callOnClick();
+        });
+
     }
 
     public class myDBHelper extends SQLiteOpenHelper {
