@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
             String strNames = "그룹이름" + "\r\n" + "------------" + "\r\n";
             String strNumbers = "그룹인원" + "\r\n" + "------------" + "\r\n";
+
             while (cursor.moveToNext()) {
                 strNames += cursor.getString(0) + "\r\n";
                 strNumbers += cursor.getString(1) + "\r\n";
@@ -93,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
             db.close();
         });
-
-
     }
 
     public class myDBHelper extends SQLiteOpenHelper {
