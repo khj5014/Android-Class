@@ -139,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
             super(context, "groupDB.db", null, 1);
         }
 
-
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL("create table groupTBL (gName char(20) primary key, gNumber integer);");
